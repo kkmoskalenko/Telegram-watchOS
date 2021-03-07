@@ -738,6 +738,7 @@
 		9B868CF625F4F57600C91882 /* TdApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B868A2A25F4F57500C91882 /* TdApi.swift */; };
 		9B868CF725F4F57600C91882 /* TdClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B868A2B25F4F57500C91882 /* TdClient.swift */; };
 		9B868CFB25F4F58700C91882 /* libTDLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B86875025F4F55900C91882 /* libTDLib.a */; };
+		9BD48EFE25F4F8B100FE5E0B /* TdClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B868D0C25F4F73A00C91882 /* TdClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1544,6 +1545,7 @@
 		9B868A2825F4F57500C91882 /* TdInt64.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TdInt64.swift; sourceTree = "<group>"; };
 		9B868A2A25F4F57500C91882 /* TdApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TdApi.swift; sourceTree = "<group>"; };
 		9B868A2B25F4F57500C91882 /* TdClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TdClient.swift; sourceTree = "<group>"; };
+		9B868D0C25F4F73A00C91882 /* TdClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TdClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1601,6 +1603,7 @@
 		9B5829C125F37D6B00B77BCC /* Telegram WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				9B868D0C25F4F73A00C91882 /* TdClient.swift */,
 				9B5829C225F37D6B00B77BCC /* HostingController.swift */,
 				9B5829C425F37D6B00B77BCC /* ContentView.swift */,
 				9B5829C625F37D6B00B77BCC /* ExtensionDelegate.swift */,
@@ -2533,6 +2536,7 @@
 				9B5829C925F37D6B00B77BCC /* NotificationController.swift in Sources */,
 				9B5829C725F37D6B00B77BCC /* ExtensionDelegate.swift in Sources */,
 				9B5829CB25F37D6B00B77BCC /* NotificationView.swift in Sources */,
+				9BD48EFE25F4F8B100FE5E0B /* TdClient.swift in Sources */,
 				9B5829CD25F37D6B00B77BCC /* ComplicationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
