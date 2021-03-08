@@ -36,5 +36,9 @@
 	<string>$(PRODUCT_MODULE_NAME).ExtensionDelegate</string>
 	<key>WKWatchOnly</key>
 	<true/>
+	<key>API_ID</key>
+	<string>$(API_ID)</string>
+	<key>API_HASH</key>
+	<string>$(API_HASH)</string>
 </dict>
 </plist>

@@ -1,5 +1,9 @@
 # Telegram watchOS
 
+## Compilation Guide
+
+1. Rename `Config.sample.xcconfig` to `Config.xcconfig` and fill in your own `api_id` and `api_hash` (can be obtained at https://my.telegram.org)
+
 ## Building TDLib for watchOS 6
 
 **You do NOT have to follow the steps below, because this repesotiry already contains prebuilt TDLib binaries. I’ve written this instruction as a reminder for myself.**

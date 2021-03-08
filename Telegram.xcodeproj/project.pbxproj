@@ -1553,6 +1553,7 @@
 		9B868A2A25F4F57500C91882 /* TdApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TdApi.swift; sourceTree = "<group>"; };
 		9B868A2B25F4F57500C91882 /* TdClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TdClient.swift; sourceTree = "<group>"; };
 		9B868D0C25F4F73A00C91882 /* TdClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TdClient.swift; sourceTree = "<group>"; };
+		9BE5B66E25F6292D00CD20AB /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1588,6 +1589,7 @@
 		9B5829A325F37D6600B77BCC = {
 			isa = PBXGroup;
 			children = (
+				9BE5B66E25F6292D00CD20AB /* Config.xcconfig */,
 				9B5829B225F37D6600B77BCC /* Telegram WatchKit App */,
 				9B5829C125F37D6B00B77BCC /* Telegram WatchKit Extension */,
 				9B86875125F4F55900C91882 /* TDLib */,
@@ -3334,6 +3336,7 @@
 /* Begin XCBuildConfiguration section */
 		9B5829D525F37D6C00B77BCC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9BE5B66E25F6292D00CD20AB /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -3394,6 +3397,7 @@
 		};
 		9B5829D625F37D6C00B77BCC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9BE5B66E25F6292D00CD20AB /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
