@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -21,6 +21,9 @@
 		9B5829D225F37D6C00B77BCC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B5829D125F37D6C00B77BCC /* Preview Assets.xcassets */; };
 		9B79D04225F4B01000F70D5A /* libtdjson.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B79D04125F4B01000F70D5A /* libtdjson.dylib */; };
 		9B79D04325F4B01000F70D5A /* libtdjson.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 9B79D04125F4B01000F70D5A /* libtdjson.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		9B861B9125F5D257007BAF8C /* QRCodeGenerator in Frameworks */ = {isa = PBXBuildFile; productRef = 9B861B9025F5D257007BAF8C /* QRCodeGenerator */; };
+		9B861B9625F5D6FD007BAF8C /* QRCodeShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B861B9525F5D6FD007BAF8C /* QRCodeShape.swift */; };
+		9B861B9B25F5E302007BAF8C /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B861B9A25F5E302007BAF8C /* LogInView.swift */; };
 		9B868A2C25F4F57500C91882 /* DisableProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B86875E25F4F57200C91882 /* DisableProxy.swift */; };
 		9B868A2D25F4F57500C91882 /* EditCustomLanguagePackInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B86875F25F4F57200C91882 /* EditCustomLanguagePackInfo.swift */; };
 		9B868A2E25F4F57500C91882 /* StorageStatistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B86876025F4F57200C91882 /* StorageStatistics.swift */; };
@@ -828,6 +831,8 @@
 		9B5829D325F37D6C00B77BCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B5829D425F37D6C00B77BCC /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		9B79D04125F4B01000F70D5A /* libtdjson.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libtdjson.dylib; path = TDLib/libtdjson.dylib; sourceTree = "<group>"; };
+		9B861B9525F5D6FD007BAF8C /* QRCodeShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeShape.swift; sourceTree = "<group>"; };
+		9B861B9A25F5E302007BAF8C /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 		9B86875025F4F55900C91882 /* libTDLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTDLib.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B86875E25F4F57200C91882 /* DisableProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisableProxy.swift; sourceTree = "<group>"; };
 		9B86875F25F4F57200C91882 /* EditCustomLanguagePackInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditCustomLanguagePackInfo.swift; sourceTree = "<group>"; };
@@ -1554,6 +1559,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B79D04225F4B01000F70D5A /* libtdjson.dylib in Frameworks */,
+				9B861B9125F5D257007BAF8C /* QRCodeGenerator in Frameworks */,
 				9B868CFB25F4F58700C91882 /* libTDLib.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1603,6 +1609,7 @@
 		9B5829C125F37D6B00B77BCC /* Telegram WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				9B861B8B25F5D196007BAF8C /* LogIn */,
 				9B868D0C25F4F73A00C91882 /* TdClient.swift */,
 				9B5829C225F37D6B00B77BCC /* HostingController.swift */,
 				9B5829C425F37D6B00B77BCC /* ContentView.swift */,
@@ -1632,6 +1639,15 @@
 				9B79D04125F4B01000F70D5A /* libtdjson.dylib */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9B861B8B25F5D196007BAF8C /* LogIn */ = {
+			isa = PBXGroup;
+			children = (
+				9B861B9A25F5E302007BAF8C /* LogInView.swift */,
+				9B861B9525F5D6FD007BAF8C /* QRCodeShape.swift */,
+			);
+			path = LogIn;
 			sourceTree = "<group>";
 		};
 		9B86875125F4F55900C91882 /* TDLib */ = {
@@ -2433,6 +2449,9 @@
 				9B868CFD25F4F58700C91882 /* PBXTargetDependency */,
 			);
 			name = "Telegram WatchKit Extension";
+			packageProductDependencies = (
+				9B861B9025F5D257007BAF8C /* QRCodeGenerator */,
+			);
 			productName = "Telegram WatchKit Extension";
 			productReference = 9B5829BD25F37D6B00B77BCC /* Telegram WatchKit Extension.appex */;
 			productType = "com.apple.product-type.watchkit2-extension";
@@ -2486,6 +2505,9 @@
 				Base,
 			);
 			mainGroup = 9B5829A325F37D6600B77BCC;
+			packageReferences = (
+				9B861B8F25F5D257007BAF8C /* XCRemoteSwiftPackageReference "swift-qrcode-generator" */,
+			);
 			productRefGroup = 9B5829AB25F37D6600B77BCC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -2534,8 +2556,10 @@
 				9B5829C525F37D6B00B77BCC /* ContentView.swift in Sources */,
 				9B5829C325F37D6B00B77BCC /* HostingController.swift in Sources */,
 				9B5829C925F37D6B00B77BCC /* NotificationController.swift in Sources */,
+				9B861B9625F5D6FD007BAF8C /* QRCodeShape.swift in Sources */,
 				9B5829C725F37D6B00B77BCC /* ExtensionDelegate.swift in Sources */,
 				9B5829CB25F37D6B00B77BCC /* NotificationView.swift in Sources */,
+				9B861B9B25F5E302007BAF8C /* LogInView.swift in Sources */,
 				9BD48EFE25F4F8B100FE5E0B /* TdClient.swift in Sources */,
 				9B5829CD25F37D6B00B77BCC /* ComplicationController.swift in Sources */,
 			);
@@ -3609,6 +3633,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9B861B8F25F5D257007BAF8C /* XCRemoteSwiftPackageReference "swift-qrcode-generator" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/fwcd/swift-qrcode-generator.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9B861B9025F5D257007BAF8C /* QRCodeGenerator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9B861B8F25F5D257007BAF8C /* XCRemoteSwiftPackageReference "swift-qrcode-generator" */;
+			productName = QRCodeGenerator;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9B5829A425F37D6600B77BCC /* Project object */;
 }
