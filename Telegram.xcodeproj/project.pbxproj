@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B0C6FCB25F620DD00927854 /* TelegramService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0C6FCA25F620DD00927854 /* TelegramService.swift */; };
 		9B5829AF25F37D6600B77BCC /* Telegram WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 9B5829AE25F37D6600B77BCC /* Telegram WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9B5829B525F37D6600B77BCC /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B5829B325F37D6600B77BCC /* Interface.storyboard */; };
 		9B5829B725F37D6A00B77BCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B5829B625F37D6A00B77BCC /* Assets.xcassets */; };
@@ -814,6 +815,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9B0C6FCA25F620DD00927854 /* TelegramService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelegramService.swift; sourceTree = "<group>"; };
 		9B5829AA25F37D6600B77BCC /* Telegram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Telegram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B5829AE25F37D6600B77BCC /* Telegram WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Telegram WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B5829B425F37D6600B77BCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
@@ -1574,6 +1576,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9B0C6FD525F6255A00927854 /* Telegram */ = {
+			isa = PBXGroup;
+			children = (
+				9B868D0C25F4F73A00C91882 /* TdClient.swift */,
+				9B0C6FCA25F620DD00927854 /* TelegramService.swift */,
+			);
+			path = Telegram;
+			sourceTree = "<group>";
+		};
 		9B5829A325F37D6600B77BCC = {
 			isa = PBXGroup;
 			children = (
@@ -1610,7 +1621,7 @@
 			isa = PBXGroup;
 			children = (
 				9B861B8B25F5D196007BAF8C /* LogIn */,
-				9B868D0C25F4F73A00C91882 /* TdClient.swift */,
+				9B0C6FD525F6255A00927854 /* Telegram */,
 				9B5829C225F37D6B00B77BCC /* HostingController.swift */,
 				9B5829C425F37D6B00B77BCC /* ContentView.swift */,
 				9B5829C625F37D6B00B77BCC /* ExtensionDelegate.swift */,
@@ -2559,6 +2570,7 @@
 				9B861B9625F5D6FD007BAF8C /* QRCodeShape.swift in Sources */,
 				9B5829C725F37D6B00B77BCC /* ExtensionDelegate.swift in Sources */,
 				9B5829CB25F37D6B00B77BCC /* NotificationView.swift in Sources */,
+				9B0C6FCB25F620DD00927854 /* TelegramService.swift in Sources */,
 				9B861B9B25F5E302007BAF8C /* LogInView.swift in Sources */,
 				9BD48EFE25F4F8B100FE5E0B /* TdClient.swift in Sources */,
 				9B5829CD25F37D6B00B77BCC /* ComplicationController.swift in Sources */,
