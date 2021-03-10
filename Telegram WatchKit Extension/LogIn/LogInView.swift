@@ -39,7 +39,7 @@ struct LogInView: View {
                     .padding(11)
                     .background(RoundedRectangle(
                         cornerRadius: 9
-                    ))
+                    ).fill(Color.white))
             }
             .multilineTextAlignment(.center)
         }
