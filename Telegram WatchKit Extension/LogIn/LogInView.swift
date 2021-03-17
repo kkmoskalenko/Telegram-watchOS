@@ -18,8 +18,6 @@ struct LogInView: View {
                     .fontWeight(.medium)
                     .fixedSize(horizontal: false, vertical: true)
                 
-                Spacer(minLength: 4)
-                
                 Group {
                     Text("Settings on your Phone")
                     Image(systemName: "chevron.down")
@@ -31,18 +29,32 @@ struct LogInView: View {
                 .foregroundColor(.secondary)
                 .fixedSize(horizontal: false, vertical: true)
                 
-                Spacer(minLength: 4)
+                Spacer().frame(height: 2)
                 
                 QRCodeShape(for: link)
                     .aspectRatio(contentMode: .fill)
                     .foregroundColor(.black)
                     .padding(11)
                     .background(RoundedRectangle(
-                        cornerRadius: 9
+                        cornerRadius: 9,
+                        style: .continuous
                     ).fill(Color.white))
+                    .overlay(telegramLogo)
             }
             .multilineTextAlignment(.center)
         }
+    }
+    
+    private var telegramLogo: some View {
+        ZStack {
+            Color(red: 85 / 255,
+                  green: 172 / 255,
+                  blue: 238 / 255)
+            TelegramShape()
+                .fill(Color.white)
+        }
+        .clipShape(Circle())
+        .scaleEffect(0.217)
     }
 }
 
