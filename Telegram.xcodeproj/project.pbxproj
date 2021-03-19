@@ -23,6 +23,7 @@
 		9B5829CD25F37D6B00B77BCC /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5829CC25F37D6B00B77BCC /* ComplicationController.swift */; };
 		9B5829CF25F37D6C00B77BCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B5829CE25F37D6C00B77BCC /* Assets.xcassets */; };
 		9B5829D225F37D6C00B77BCC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B5829D125F37D6C00B77BCC /* Preview Assets.xcassets */; };
+		9B6695572604599B006E44E8 /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6695562604599B006E44E8 /* BadgeView.swift */; };
 		9B79D04225F4B01000F70D5A /* libtdjson.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B79D04125F4B01000F70D5A /* libtdjson.dylib */; };
 		9B79D04325F4B01000F70D5A /* libtdjson.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 9B79D04125F4B01000F70D5A /* libtdjson.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		9B861B9125F5D257007BAF8C /* QRCodeGenerator in Frameworks */ = {isa = PBXBuildFile; productRef = 9B861B9025F5D257007BAF8C /* QRCodeGenerator */; };
@@ -745,7 +746,9 @@
 		9B868CF625F4F57600C91882 /* TdApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B868A2A25F4F57500C91882 /* TdApi.swift */; };
 		9B868CF725F4F57600C91882 /* TdClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B868A2B25F4F57500C91882 /* TdClient.swift */; };
 		9B868CFB25F4F58700C91882 /* libTDLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B86875025F4F55900C91882 /* libTDLib.a */; };
+		9BC2426B2601D07D00FE83D8 /* MessageContent+StringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC2426A2601D07D00FE83D8 /* MessageContent+StringConvertible.swift */; };
 		9BD48EFE25F4F8B100FE5E0B /* TdClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B868D0C25F4F73A00C91882 /* TdClient.swift */; };
+		9BEA737426007D2600357A8C /* ChatRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEA737326007D2600357A8C /* ChatRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -838,6 +841,7 @@
 		9B5829D125F37D6C00B77BCC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9B5829D325F37D6C00B77BCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B5829D425F37D6C00B77BCC /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		9B6695562604599B006E44E8 /* BadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeView.swift; sourceTree = "<group>"; };
 		9B79D04125F4B01000F70D5A /* libtdjson.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libtdjson.dylib; path = TDLib/libtdjson.dylib; sourceTree = "<group>"; };
 		9B861B9525F5D6FD007BAF8C /* QRCodeShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeShape.swift; sourceTree = "<group>"; };
 		9B861B9A25F5E302007BAF8C /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
@@ -1559,7 +1563,9 @@
 		9B868A2A25F4F57500C91882 /* TdApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TdApi.swift; sourceTree = "<group>"; };
 		9B868A2B25F4F57500C91882 /* TdClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TdClient.swift; sourceTree = "<group>"; };
 		9B868D0C25F4F73A00C91882 /* TdClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TdClient.swift; sourceTree = "<group>"; };
+		9BC2426A2601D07D00FE83D8 /* MessageContent+StringConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MessageContent+StringConvertible.swift"; sourceTree = "<group>"; };
 		9BE5B66E25F6292D00CD20AB /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		9BEA737326007D2600357A8C /* ChatRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1587,6 +1593,7 @@
 			isa = PBXGroup;
 			children = (
 				9B0C444725F719ED001B3028 /* Bundle+Values.swift */,
+				9BC2426A2601D07D00FE83D8 /* MessageContent+StringConvertible.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1637,6 +1644,7 @@
 			isa = PBXGroup;
 			children = (
 				9B861B8B25F5D196007BAF8C /* LogIn */,
+				9BEA737226007C8C00357A8C /* Chats */,
 				9B0C6FD525F6255A00927854 /* Telegram */,
 				9B0C444625F719D5001B3028 /* Extensions */,
 				9B5829C225F37D6B00B77BCC /* HostingController.swift */,
@@ -2427,6 +2435,15 @@
 			path = API;
 			sourceTree = "<group>";
 		};
+		9BEA737226007C8C00357A8C /* Chats */ = {
+			isa = PBXGroup;
+			children = (
+				9BEA737326007D2600357A8C /* ChatRow.swift */,
+				9B6695562604599B006E44E8 /* BadgeView.swift */,
+			);
+			path = Chats;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2588,8 +2605,11 @@
 				9B5829C925F37D6B00B77BCC /* NotificationController.swift in Sources */,
 				9B861B9625F5D6FD007BAF8C /* QRCodeShape.swift in Sources */,
 				9B0C443F25F7157F001B3028 /* AuthModel.swift in Sources */,
+				9B6695572604599B006E44E8 /* BadgeView.swift in Sources */,
 				9B5829C725F37D6B00B77BCC /* ExtensionDelegate.swift in Sources */,
+				9BEA737426007D2600357A8C /* ChatRow.swift in Sources */,
 				9B5829CB25F37D6B00B77BCC /* NotificationView.swift in Sources */,
+				9BC2426B2601D07D00FE83D8 /* MessageContent+StringConvertible.swift in Sources */,
 				9B0C6FCB25F620DD00927854 /* TelegramService.swift in Sources */,
 				9B414A6226020050008D8F33 /* TelegramShape.swift in Sources */,
 				9B861B9B25F5E302007BAF8C /* LogInView.swift in Sources */,
