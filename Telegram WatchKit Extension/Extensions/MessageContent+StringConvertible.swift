@@ -66,6 +66,10 @@ extension MessageContent: CustomStringConvertible {
                  .messageVoiceChatEnded(_),
                  .messageInviteVoiceChatParticipants(_):
                 return "Voice Chat"
+            case .messageContactRegistered:
+                return "Joined Telegram"
+            case .messageChatJoinByLink:
+                return "Joined the group"
                 
             default: return ""
         }

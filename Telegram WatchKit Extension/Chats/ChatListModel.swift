@@ -28,9 +28,9 @@ class ChatListModel: ObservableObject {
     
     private var haveFullMainChatList = false
     
-    private var users = [Int: User]()
-    private var basicGroups = [Int: BasicGroup]()
-    private var supergroups = [Int: Supergroup]()
+    private(set) var users = [Int: User]()
+    private(set) var basicGroups = [Int: BasicGroup]()
+    private(set) var supergroups = [Int: Supergroup]()
     
     private var chatsDict = [Chat.ID: Chat]()
     private var mainChatList = [OrderedChat]()

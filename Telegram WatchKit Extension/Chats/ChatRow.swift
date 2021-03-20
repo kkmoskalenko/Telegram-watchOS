@@ -10,6 +10,7 @@ import TDLib
 
 struct ChatRow: View {
     var chat: Chat
+    var lastMessageSender: User?
     
     var body: some View {
         HStack(alignment: .top, spacing: 8) {
@@ -18,11 +19,11 @@ struct ChatRow: View {
                 .alignmentGuide(.top) { _ in -7 }
                 .clipShape(Circle())
             VStack(alignment: .leading) {
-                Text(chat.title)
+                Text(chatTitle)
                     .font(.headline)
                     .fontWeight(.medium)
                 Group {
-                    Text(lastMessageString ?? "")
+                    lastMessageText
                     lastMessageTime
                 }
                 .font(.footnote)
@@ -47,9 +48,31 @@ struct ChatRow: View {
                 .resizable()
         } else {
             Color.gray
-                .overlay(Text(chat.title.prefix(1)))
+                .overlay(Text(chatTitle.prefix(1)))
                 .font(.system(.headline, design: .rounded))
         }
+    }
+    
+    private var lastMessageText: some View {
+        let message = lastMessageString ?? ""
+        let showingSenderName: Bool
+        
+        switch chat.type {
+            case .chatTypeBasicGroup, .chatTypeSupergroup:
+                showingSenderName = !senderName.isEmpty
+                    && !message.isEmpty
+            case .chatTypePrivate, .chatTypeSecret:
+                showingSenderName = false
+        }
+        
+        let name = showingSenderName ?
+            "\(senderName): " : ""
+        
+        let nameText = Text(name)
+            .foregroundColor(.white)
+        let messageText = Text(message)
+        
+        return nameText + messageText
     }
     
     private var lastMessageTime: some View {
@@ -68,21 +91,47 @@ struct ChatRow: View {
     
     // MARK: - Getting chat properties
     
+    private var chatTitle: String {
+        chat.title.isEmpty ? "Deleted Account" : chat.title
+    }
+    
+    private var senderName: String {
+        guard
+            let message = chat.lastMessage,
+            let user = lastMessageSender
+        else { return "" }
+        
+        return message.isOutgoing ? "You" :
+            user.firstName.prefix(1)
+            .appending(user.lastName.prefix(1))
+    }
+    
     private var lastMessageString: String? {
         chat.lastMessage?.content.description
+            .replacingOccurrences(of: "\n", with: " ")
     }
     
     private var timeString: String? {
         guard let timestamp = chat.lastMessage?.date else { return nil }
         let date = Foundation.Date(timeIntervalSince1970: Double(timestamp))
-        let components = Calendar.current.dateComponents(
-            [.hour, .minute], from: date)
         
-        guard let hour = components.hour,
-              let minute = components.minute
-        else { return nil }
+        let calendar = Calendar.current
+        let formatter = DateFormatter()
         
-        return String(format: "%d:%02d", hour, minute)
+        if calendar.isDateInToday(date) {
+            formatter.dateStyle = .none
+            formatter.timeStyle = .short
+        } else if calendar.isDateInYesterday(date) {
+            return "Yesterday"
+        } else if calendar.isDateInThisWeek(date) {
+            let weekday = calendar.component(.weekday, from: date)
+            return calendar.weekdaySymbols[weekday - 1]
+        } else {
+            formatter.dateStyle = .short
+            formatter.timeStyle = .none
+        }
+        
+        return formatter.string(from: date)
     }
     
     private var unreadCountString: String? {
@@ -91,5 +140,11 @@ struct ChatRow: View {
         }
         
         return chat.isMarkedAsUnread ? "" : nil
+    }
+}
+
+fileprivate extension Calendar {
+    func isDateInThisWeek(_ date: Foundation.Date) -> Bool {
+        isDate(date, equalTo: Date(), toGranularity: .weekOfYear)
     }
 }
