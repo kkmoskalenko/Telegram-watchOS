@@ -24,6 +24,8 @@
 		9B5829CF25F37D6C00B77BCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B5829CE25F37D6C00B77BCC /* Assets.xcassets */; };
 		9B5829D225F37D6C00B77BCC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B5829D125F37D6C00B77BCC /* Preview Assets.xcassets */; };
 		9B6695572604599B006E44E8 /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6695562604599B006E44E8 /* BadgeView.swift */; };
+		9B66956E2604E81E006E44E8 /* ChatList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B66956D2604E81E006E44E8 /* ChatList.swift */; };
+		9B6695732604E87E006E44E8 /* ChatListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6695722604E87E006E44E8 /* ChatListModel.swift */; };
 		9B79D04225F4B01000F70D5A /* libtdjson.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B79D04125F4B01000F70D5A /* libtdjson.dylib */; };
 		9B79D04325F4B01000F70D5A /* libtdjson.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 9B79D04125F4B01000F70D5A /* libtdjson.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		9B861B9125F5D257007BAF8C /* QRCodeGenerator in Frameworks */ = {isa = PBXBuildFile; productRef = 9B861B9025F5D257007BAF8C /* QRCodeGenerator */; };
@@ -842,6 +844,8 @@
 		9B5829D325F37D6C00B77BCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B5829D425F37D6C00B77BCC /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		9B6695562604599B006E44E8 /* BadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeView.swift; sourceTree = "<group>"; };
+		9B66956D2604E81E006E44E8 /* ChatList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatList.swift; sourceTree = "<group>"; };
+		9B6695722604E87E006E44E8 /* ChatListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListModel.swift; sourceTree = "<group>"; };
 		9B79D04125F4B01000F70D5A /* libtdjson.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libtdjson.dylib; path = TDLib/libtdjson.dylib; sourceTree = "<group>"; };
 		9B861B9525F5D6FD007BAF8C /* QRCodeShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeShape.swift; sourceTree = "<group>"; };
 		9B861B9A25F5E302007BAF8C /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
@@ -2438,6 +2442,8 @@
 		9BEA737226007C8C00357A8C /* Chats */ = {
 			isa = PBXGroup;
 			children = (
+				9B6695722604E87E006E44E8 /* ChatListModel.swift */,
+				9B66956D2604E81E006E44E8 /* ChatList.swift */,
 				9BEA737326007D2600357A8C /* ChatRow.swift */,
 				9B6695562604599B006E44E8 /* BadgeView.swift */,
 			);
@@ -2600,8 +2606,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B66956E2604E81E006E44E8 /* ChatList.swift in Sources */,
 				9B5829C525F37D6B00B77BCC /* ContentView.swift in Sources */,
 				9B5829C325F37D6B00B77BCC /* HostingController.swift in Sources */,
+				9B6695732604E87E006E44E8 /* ChatListModel.swift in Sources */,
 				9B5829C925F37D6B00B77BCC /* NotificationController.swift in Sources */,
 				9B861B9625F5D6FD007BAF8C /* QRCodeShape.swift in Sources */,
 				9B0C443F25F7157F001B3028 /* AuthModel.swift in Sources */,

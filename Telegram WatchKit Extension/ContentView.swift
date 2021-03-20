@@ -32,7 +32,7 @@ struct ContentView: View {
                     Button("Sign In", action: model.checkPassword)
                 }
             case .loggedIn:
-                Text("You are logged in!")
+                ChatList()
                 
         }
     }
