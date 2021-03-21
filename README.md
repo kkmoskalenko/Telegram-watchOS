@@ -1,8 +1,31 @@
 # Telegram watchOS
 
-## Compilation Guide
+## Overview
 
-1. Rename `Config.sample.xcconfig` to `Config.xcconfig` and fill in your own `api_id` and `api_hash` (can be obtained at https://my.telegram.org)
+This repository contains the Swift implementation of the standalone Telegram app for watchOS 6. The implementation depends on the [TDLib](https://github.com/tdlib/td) library, so the precompiled library binary is also included.
+
+**Unfortunately, low-level networking APIs in watchOS are disabled by Apple (except for audio streaming  apps), so <u>the app only works correctly on the watchOS Simulator</u>. See the [issue](https://github.com/tdlib/td/issues/1442) for reference.**
+
+### Supported Features
+
+- [x] Logging in via QR Code with support for accounts protected by a 2-Step Verfication password
+- [x] Viewing the chat list
+
+### Screenshots
+
+![Logging in via QR Code 1](Screenshots/LogIn_1.png) ![Logging in via QR Code 2](Screenshots/LogIn_2.png)
+
+![Chat List 1](Screenshots/Chats_1.png) ![Chat List 2](Screenshots/Chats_2.png)
+
+## Build Instructions
+
+1. Open the `Config.xcconfig` file and fill in your own `api_id` and `api_hash` (can be obtained at https://my.telegram.org)
+
+2. Open `Telegram.xcodeproj` in the latest Xcode, select a watchOS Simulator as a run destination, then run (⌘R)
+
+> Although the app can be built and run on a physical Apple Watch device (`armv7k` and `arm64_32` architectures), it will not work correctly due to low-level networking limitations of watchOS (see this [issue](https://github.com/tdlib/td/issues/1442)).
+>
+> Besides, building the app for ARM64 watchOS Simulator (for Mac computers with Apple Silicon) is not supported.
 
 ## Building TDLib for watchOS 6
 
