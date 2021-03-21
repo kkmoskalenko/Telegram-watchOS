@@ -5,7 +5,7 @@
 //  Created by Konstantin Moskalenko on 19.03.2021.
 //
 
-import Foundation
+import Combine
 import TDLib
 
 class ChatListModel: ObservableObject {
@@ -14,6 +14,9 @@ class ChatListModel: ObservableObject {
             chatsDict[$0.chatId]
         }
     }
+    
+    // Workaround for enabling UI updates on watchOS 6
+    let objectWillChange = ObservableObjectPublisher()
     
     init() {
         TelegramService.shared.addListener(self)

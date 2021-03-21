@@ -143,6 +143,13 @@ struct ChatRow: View {
     }
 }
 
+extension ChatRow: Equatable {
+    // One more workaround to prevent the crash on watchOS 6
+    // https://noahgilmore.com/blog/swiftui-equatable-crash/
+    
+    static func == (lhs: ChatRow, rhs: ChatRow) -> Bool { false }
+}
+
 fileprivate extension Calendar {
     func isDateInThisWeek(_ date: Foundation.Date) -> Bool {
         isDate(date, equalTo: Date(), toGranularity: .weekOfYear)

@@ -14,7 +14,7 @@ struct ContentView: View {
         switch model.state {
             case .loggedOut:
                 VStack {
-                    Text("You are currently logged out")
+                    Text("You are logged out")
                         .font(.headline)
                     Text("Please wait or try restarting the app.")
                         .font(.subheadline)
@@ -33,7 +33,7 @@ struct ContentView: View {
                 }
             case .loggedIn:
                 ChatList()
-                
+                    .accentColor(.blue)
         }
     }
 }
