@@ -21,7 +21,7 @@ public final class DTO<T: Codable>: Codable {
     }
     
     public init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
+        let container = try decoder.container(keyedBy: DtoCodingKeys.self)
         type = try container.decode(String.self, forKey: .type)
         extra = try container.decodeIfPresent(String.self, forKey: .extra)
         payload = try T(from: decoder)
@@ -29,15 +29,10 @@ public final class DTO<T: Codable>: Codable {
     }
     
     public func encode(to encoder: Encoder) throws {
-        var container = encoder.container(keyedBy: CodingKeys.self)
+        var container = encoder.container(keyedBy: DtoCodingKeys.self)
         try container.encode(type, forKey: .type)
         try container.encodeIfPresent(extra, forKey: .extra)
         try payload.encode(to: encoder)
-    }
-    
-    private enum CodingKeys: String, CodingKey {
-        case type = "@type"
-        case extra = "@extra"
     }
 }
 
@@ -49,3 +44,7 @@ extension DTO: TdQuery {
     }
 }
 
+enum DtoCodingKeys: String, CodingKey {
+    case type = "@type"
+    case extra = "@extra"
+}
