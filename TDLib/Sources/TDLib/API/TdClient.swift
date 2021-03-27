@@ -6,10 +6,10 @@
 //
 
 import Foundation
-import TDLib
+import TDLibCore
 
-class TdClient: TDLib.TdClient {
-    typealias CompletionHandler = (Data) -> Void
+public final class TdClient {
+    public typealias CompletionHandler = (Data) -> Void
     
     private var client: UnsafeMutableRawPointer!
     private let tdlibMainQueue = DispatchQueue(label: "TDLib", qos: .utility)
@@ -27,7 +27,7 @@ class TdClient: TDLib.TdClient {
     ///
     /// - Parameter completionQueue: The serial operation queue used to dispatch all completion handlers. `.main` by default.
     /// - Parameter logger: The logger object for debug print all queries and responses
-    init(completionQueue: DispatchQueue = .main, logger: Logger? = nil) {
+    public init(completionQueue: DispatchQueue = .main, logger: Logger? = nil) {
         self.completionQueue = completionQueue
         self.logger = logger
     }
@@ -36,7 +36,7 @@ class TdClient: TDLib.TdClient {
         close()
     }
     
-    func close() {
+    public func close() {
         guard !isClientDestroyed else { return }
         if !stopFlag {
             send(query: DTO(Close()), completion: { _ in })
@@ -47,7 +47,7 @@ class TdClient: TDLib.TdClient {
     }
     
     /// Receives incoming updates and request responses from the TDLib client
-    func run(updateHandler: @escaping CompletionHandler) {
+    public func run(updateHandler: @escaping CompletionHandler) {
         self.updateHandler = updateHandler
         createClientIfNeeded()
         
@@ -68,7 +68,7 @@ class TdClient: TDLib.TdClient {
     }
     
     /// Sends request to the TDLib client.
-    func send(query: TdQuery, completion: (CompletionHandler)? = nil) {
+    public func send(query: TdQuery, completion: (CompletionHandler)? = nil) {
         guard !self.isClientDestroyed else { return }
         
         tdlibQueryQueue.async { [weak self] in
@@ -89,7 +89,7 @@ class TdClient: TDLib.TdClient {
     }
     
     /// Synchronously executes TDLib request.
-    func execute(query: TdQuery) {
+    public func execute(query: TdQuery) {
         guard !self.isClientDestroyed else { return }
         
         if let data = try? query.make(with: nil),
@@ -146,4 +146,8 @@ class TdClient: TDLib.TdClient {
         }
         return false
     }
+}
+
+public protocol TdQuery {
+    func make(with extra: String?) throws -> Data
 }
