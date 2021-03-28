@@ -28,10 +28,6 @@ class TelegramService {
                     Update.self, from: $0) else { return }
             self.listeners.forEach { $0.onUpdate(update) }
         }
-        
-        let query = SetLogVerbosityLevel(
-            newVerbosityLevel: 0)
-        api.client.execute(query: DTO(query))
     }
 }
 
