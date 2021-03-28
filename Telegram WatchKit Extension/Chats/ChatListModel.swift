@@ -128,12 +128,15 @@ extension ChatListModel: UpdateListener {
         objectWillChange.send()
         
         switch update {
+            // MARK: Users & Groups
             case .updateUser(let value):
                 users[value.user.id] = value.user
             case .updateBasicGroup(let value):
                 basicGroups[value.basicGroup.id] = value.basicGroup
             case .updateSupergroup(let value):
                 supergroups[value.supergroup.id] = value.supergroup
+                
+            // MARK: Chat list
             case .updateNewChat(let value):
                 chatsDict[value.chat.id] = value.chat
                 setChatPositions(value.chat, value.chat.positions)
@@ -148,39 +151,20 @@ extension ChatListModel: UpdateListener {
                 setChatPositions(chatId: value.chatId, value.positions)
             case .updateChatPosition(let value):
                 setChatPositions(chatId: value.chatId, [value.position])
+                
+            // MARK: Read / unread status
+            case .updateChatIsMarkedAsUnread(let value):
+                chatsDict[value.chatId]?.isMarkedAsUnread = value.isMarkedAsUnread
             case .updateChatReadInbox(let value):
                 chatsDict[value.chatId]?.lastReadInboxMessageId = value.lastReadInboxMessageId
                 chatsDict[value.chatId]?.unreadCount = value.unreadCount
             case .updateChatReadOutbox(let value):
                 chatsDict[value.chatId]?.lastReadOutboxMessageId = value.lastReadOutboxMessageId
-            case .updateChatUnreadMentionCount(let value):
-                chatsDict[value.chatId]?.unreadMentionCount = value.unreadMentionCount
-            case .updateMessageMentionRead(let value):
-                chatsDict[value.chatId]?.unreadMentionCount = value.unreadMentionCount
-            case .updateChatReplyMarkup(let value):
-                chatsDict[value.chatId]?.replyMarkupMessageId = value.replyMarkupMessageId
-            case .updateChatDraftMessage(let value):
-                chatsDict[value.chatId]?.draftMessage = value.draftMessage
-                setChatPositions(chatId: value.chatId, value.positions)
-            case .updateChatPermissions(let value):
-                chatsDict[value.chatId]?.permissions = value.permissions
+                
+            // MARK: Notifications
             case .updateChatNotificationSettings(let value):
                 chatsDict[value.chatId]?.notificationSettings = value.notificationSettings
-            case .updateChatDefaultDisableNotification(let value):
-                chatsDict[value.chatId]?.defaultDisableNotification = value.defaultDisableNotification
-            case .updateChatIsMarkedAsUnread(let value):
-                chatsDict[value.chatId]?.isMarkedAsUnread = value.isMarkedAsUnread
-            case .updateChatIsBlocked(let value):
-                chatsDict[value.chatId]?.isBlocked = value.isBlocked
-            case .updateChatHasScheduledMessages(let value):
-                chatsDict[value.chatId]?.hasScheduledMessages = value.hasScheduledMessages
-            case .updateChatVoiceChat(let value):
-                chatsDict[value.chatId]?.isVoiceChatEmpty = value.isVoiceChatEmpty
-                chatsDict[value.chatId]?.voiceChatGroupCallId = value.voiceChatGroupCallId
-            case .updateChatMessageTtlSetting(let value):
-                chatsDict[value.chatId]?.messageTtlSetting = value.messageTtlSetting
-            case .updateChatActionBar(let value):
-                chatsDict[value.chatId]?.actionBar = value.actionBar
+                
             default: break
         }
     }
