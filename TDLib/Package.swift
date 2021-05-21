@@ -8,15 +8,18 @@ let package = Package(
     products: [
         .library(
             name: "TDLib",
-            targets: ["TDLib"]),
+            targets: ["TDLib"]
+        ),
     ],
     targets: [
         .target(
             name: "TDLib",
-            dependencies: ["TDLibCore"]),
+            dependencies: ["TDLibCore"]
+        ),
         .binaryTarget(
             name: "TDLibCore",
-            url: "https://gist.github.com/kkmoskalenko/6840fe2bf67ce89764f312def3e1d911/raw/39175b4a1e4c625612d834a1cee8aaf39c552510/TDLibCore.xcframework.zip",
-            checksum: "33ffdc74b45dc008dfb69e5e4494ed0d81aa0309eab78f85a22718e86b83245f"),
+            url: "https://github.com/kkmoskalenko/td/releases/download/v1.7.4/TDLibCore.xcframework.zip",
+            checksum: "cc78e5023c33250758597ae3487daf8b97866fd484f4f86d83388a7a7c380002"
+        ),
     ]
 )
