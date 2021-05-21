@@ -66,8 +66,8 @@ extension AuthModel: UpdateListener {
                     parameters: parameters,
                     completion: handler)
             case .authorizationStateWaitEncryptionKey(_):
-                try? api.setDatabaseEncryptionKey(
-                    newEncryptionKey: Data(),
+                try? api.checkDatabaseEncryptionKey(
+                    encryptionKey: Data(),
                     completion: handler)
             case .authorizationStateWaitPhoneNumber,
                  .authorizationStateWaitCode(_),
