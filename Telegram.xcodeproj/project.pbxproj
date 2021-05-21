@@ -16,7 +16,7 @@
 		9B5829B725F37D6A00B77BCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B5829B625F37D6A00B77BCC /* Assets.xcassets */; };
 		9B5829BE25F37D6B00B77BCC /* Telegram WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9B5829BD25F37D6B00B77BCC /* Telegram WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9B5829C325F37D6B00B77BCC /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5829C225F37D6B00B77BCC /* HostingController.swift */; };
-		9B5829C525F37D6B00B77BCC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5829C425F37D6B00B77BCC /* ContentView.swift */; };
+		9B5829C525F37D6B00B77BCC /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5829C425F37D6B00B77BCC /* RootView.swift */; };
 		9B5829C725F37D6B00B77BCC /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5829C625F37D6B00B77BCC /* ExtensionDelegate.swift */; };
 		9B5829C925F37D6B00B77BCC /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5829C825F37D6B00B77BCC /* NotificationController.swift */; };
 		9B5829CB25F37D6B00B77BCC /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5829CA25F37D6B00B77BCC /* NotificationView.swift */; };
@@ -88,7 +88,7 @@
 		9B5829B825F37D6A00B77BCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B5829BD25F37D6B00B77BCC /* Telegram WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Telegram WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B5829C225F37D6B00B77BCC /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
-		9B5829C425F37D6B00B77BCC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9B5829C425F37D6B00B77BCC /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		9B5829C625F37D6B00B77BCC /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		9B5829C825F37D6B00B77BCC /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		9B5829CA25F37D6B00B77BCC /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
@@ -165,15 +165,10 @@
 		9B5829C125F37D6B00B77BCC /* Telegram WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				9B861B8B25F5D196007BAF8C /* LogIn */,
-				9BEA737226007C8C00357A8C /* Chats */,
+				9BBCCC1E2657DFB100042338 /* Screens */,
 				9B0C444625F719D5001B3028 /* Extensions */,
 				9B0C6FCA25F620DD00927854 /* TelegramService.swift */,
-				9B5829C225F37D6B00B77BCC /* HostingController.swift */,
-				9B5829C425F37D6B00B77BCC /* ContentView.swift */,
 				9B5829C625F37D6B00B77BCC /* ExtensionDelegate.swift */,
-				9B5829C825F37D6B00B77BCC /* NotificationController.swift */,
-				9B5829CA25F37D6B00B77BCC /* NotificationView.swift */,
 				9B5829CC25F37D6B00B77BCC /* ComplicationController.swift */,
 				9B5829CE25F37D6C00B77BCC /* Assets.xcassets */,
 				9B5829D325F37D6C00B77BCC /* Info.plist */,
@@ -207,6 +202,35 @@
 				9B414A6126020050008D8F33 /* TelegramShape.swift */,
 			);
 			path = LogIn;
+			sourceTree = "<group>";
+		};
+		9BBCCC1E2657DFB100042338 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				9BBCCC1F2657E05400042338 /* Root */,
+				9BBCCC202657E07D00042338 /* Notification */,
+				9B861B8B25F5D196007BAF8C /* LogIn */,
+				9BEA737226007C8C00357A8C /* Chats */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		9BBCCC1F2657E05400042338 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				9B5829C225F37D6B00B77BCC /* HostingController.swift */,
+				9B5829C425F37D6B00B77BCC /* RootView.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		9BBCCC202657E07D00042338 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				9B5829C825F37D6B00B77BCC /* NotificationController.swift */,
+				9B5829CA25F37D6B00B77BCC /* NotificationView.swift */,
+			);
+			path = Notification;
 			sourceTree = "<group>";
 		};
 		9BEA737226007C8C00357A8C /* Chats */ = {
@@ -355,7 +379,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B66956E2604E81E006E44E8 /* ChatList.swift in Sources */,
-				9B5829C525F37D6B00B77BCC /* ContentView.swift in Sources */,
+				9B5829C525F37D6B00B77BCC /* RootView.swift in Sources */,
 				9B5829C325F37D6B00B77BCC /* HostingController.swift in Sources */,
 				9B6695732604E87E006E44E8 /* ChatListModel.swift in Sources */,
 				9B5829C925F37D6B00B77BCC /* NotificationController.swift in Sources */,
