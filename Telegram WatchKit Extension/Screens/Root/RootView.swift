@@ -13,13 +13,15 @@ struct RootView: View {
     var body: some View {
         switch model.state {
             case .loggedOut:
-                VStack {
-                    Text("You are logged out")
-                        .font(.headline)
-                    Text("Please wait or try restarting the app.")
-                        .font(.subheadline)
+                ProgressView {
+                    VStack {
+                        Text("You are logged out")
+                            .font(.headline)
+                        Text("Please wait or try restarting the app.")
+                            .font(.subheadline)
+                    }
+                    .multilineTextAlignment(.center)
                 }
-                .multilineTextAlignment(.center)
             case .waitOtherDeviceConfirmation(let link):
                 LogInView(link: link)
             case .waitPassword:
@@ -27,7 +29,7 @@ struct RootView: View {
                     Text("Enter Your Password")
                         .font(.headline)
                         .padding(.bottom)
-                    TextField("Password", text: $model.password)
+                    SecureField("Password", text: $model.password)
                         .textContentType(.password)
                     Button("Sign In", action: model.checkPassword)
                 }

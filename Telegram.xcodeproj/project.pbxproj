@@ -11,6 +11,7 @@
 		9B0C444825F719ED001B3028 /* Bundle+Values.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0C444725F719ED001B3028 /* Bundle+Values.swift */; };
 		9B0C6FCB25F620DD00927854 /* TelegramService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0C6FCA25F620DD00927854 /* TelegramService.swift */; };
 		9B414A6226020050008D8F33 /* TelegramShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B414A6126020050008D8F33 /* TelegramShape.swift */; };
+		9B554495265A8BCE004EC1C8 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B554494265A8BCE004EC1C8 /* ProgressView.swift */; };
 		9B5829AF25F37D6600B77BCC /* Telegram WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 9B5829AE25F37D6600B77BCC /* Telegram WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9B5829B525F37D6600B77BCC /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B5829B325F37D6600B77BCC /* Interface.storyboard */; };
 		9B5829B725F37D6A00B77BCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B5829B625F37D6A00B77BCC /* Assets.xcassets */; };
@@ -81,6 +82,7 @@
 		9B0C444725F719ED001B3028 /* Bundle+Values.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Values.swift"; sourceTree = "<group>"; };
 		9B0C6FCA25F620DD00927854 /* TelegramService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelegramService.swift; sourceTree = "<group>"; };
 		9B414A6126020050008D8F33 /* TelegramShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelegramShape.swift; sourceTree = "<group>"; };
+		9B554494265A8BCE004EC1C8 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		9B5829AA25F37D6600B77BCC /* Telegram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Telegram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B5829AE25F37D6600B77BCC /* Telegram WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Telegram WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B5829B425F37D6600B77BCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
@@ -130,6 +132,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		9B554496265A8DEC004EC1C8 /* Supporting Views */ = {
+			isa = PBXGroup;
+			children = (
+				9B554494265A8BCE004EC1C8 /* ProgressView.swift */,
+			);
+			path = "Supporting Views";
+			sourceTree = "<group>";
+		};
 		9B5829A325F37D6600B77BCC = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +175,7 @@
 		9B5829C125F37D6B00B77BCC /* Telegram WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				9B554496265A8DEC004EC1C8 /* Supporting Views */,
 				9BBCCC1E2657DFB100042338 /* Screens */,
 				9B0C444625F719D5001B3028 /* Extensions */,
 				9B0C6FCA25F620DD00927854 /* TelegramService.swift */,
@@ -395,6 +406,7 @@
 				9B861B9B25F5E302007BAF8C /* LogInView.swift in Sources */,
 				9B5829CD25F37D6B00B77BCC /* ComplicationController.swift in Sources */,
 				9B0C444825F719ED001B3028 /* Bundle+Values.swift in Sources */,
+				9B554495265A8BCE004EC1C8 /* ProgressView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
